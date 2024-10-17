@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 /* Displays Items with Flex and Center Vertically & Horizontally */
 .container {
     display: flex;
@@ -5,27 +10,29 @@
     justify-content: center;
 }
 
-.vertical-container{
+.vertical-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-
-.width-100vw {
-    width: 100vw;
+.justify-space-around {
+    justify-content: space-around;
 }
 
-.height-100vw {
-    height: 100vh;
-}
-
-#audio-container{
-    height:300px;
+#audio-container {
+    height: 300px;
+    width: 35%;
+    background-color: thistle;
     margin-top: 20px;
 }
 
-#main-container{
+#main-container {
     height: 100vh;
     width: 100vw
+}
+
+#cover-img {
+    height: 150px;
+    width: 150px;
 }
