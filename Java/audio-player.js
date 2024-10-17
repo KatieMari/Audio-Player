@@ -4,6 +4,9 @@ const audioPlayer = new Audio();
 // Select Play Pause Button Element
 const playPauseButton = document.getElementById("play-button");
 
+// Select Progress Slider
+const progressSlider = document.getElementById("progress-slider");
+
 //audioPlayer.src is the First song of the Audio Player by Default
 audioPlayer.src = "Assets/Songs/Song 1.mp3";
 
@@ -27,10 +30,24 @@ function onPlayPauseClick() {
     }
 }
 
+
 function onLoadedMetadata(){
-    console.log(audioPlayer.duration);
+    progressSlider.max = audioPlayer.duration;
 }
+
+function onTimeUpdate() {
+    progressSlider.value = audioPlayer.currentTime;
+}
+
+function onEnd(){
+    progressSlider.value = 0;
+    playPauseButton.innerHTML = "Play"
+    playing = false;
+}
+
 
 // Link onclick Event to the onPlayPauseClick Button
 playPauseButton.onclick = onPlayPauseClick;
 audioPlayer.onloadedmetadata = onLoadedMetadata;
+audioPlayer.ontimeupdate = onTimeUpdate;
+audioPlayer.onended = onEnd;
