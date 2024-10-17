@@ -16,9 +16,6 @@
     align-items: center;
     flex-direction: column;
 }
-.justify-space-around {
-    justify-content: space-around;
-}
 
 #audio-container {
     height: 300px;

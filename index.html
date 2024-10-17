@@ -8,6 +8,7 @@
 
     <link href="Styling/style.css" rel="stylesheet" />
 
+    <script src="Java/audio-player.js" defer> </script> 
     <title>Document</title>
 </head>
 
@@ -31,20 +32,22 @@
                 <div class="container">
                     <input type="range" min="0" max="100">
                 </div>
+
                 <!-- Play, Previous -->
                 <div class="container">
                     <button>Previous</button>
-                    <button>Play</button>
+                    <button id="play-button">Play</button>
                     <button>Next</button>
                 </div>
 
                 <!-- Image Cover -->
                 <img id="cover-img" src="Assets/Images/Image 1.jpeg" />
-            </div>
-            <p>00:00 / 00:00</p>
-            <input type="range">
-            <div class="container">
 
+            </div>
+
+            <div class="container">
+                <p>00:00 / 00:00</p>
+                <input type="range">
             </div>
         </div>
     </div>
