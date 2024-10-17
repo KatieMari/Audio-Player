@@ -1,0 +1,31 @@
+/* Displays Items with Flex and Center Vertically & Horizontally */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vertical-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.width-100vw {
+    width: 100vw;
+}
+
+.height-100vw {
+    height: 100vh;
+}
+
+#audio-container{
+    height:300px;
+    margin-top: 20px;
+}
+
+#main-container{
+    height: 100vh;
+    width: 100vw
+}
