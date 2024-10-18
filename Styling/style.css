@@ -1,6 +1,65 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Abril Fatface', sans-serif;
+    background-color: #f4f4f9;
+    color: #402525;
+    height: 100vh;
+}
+
+/* Title Styling */
+h1 {
+    font-size: 75px;
+    color: #402525;
+    text-align: center;
+}
+
+/* Song Name and Artist Styling */
+p {
+    font-size: 25px;
+    text-align: center;
+}
+
+p span {
+    font-weight: bold;
+    color: #402525;
+}
+
+
+
+/* Main Container */
+#main-container {
+    height: 100vh;
+    width: 100vw
+}
+
+/* Styles for the Audio Container Player */
+#audio-container {
+    height: 400px;
+    width: 90%;
+    max-width: 900px;
+    background-color: #F2B3BF;
+    border-radius: 100px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    padding: 20px;
+    gap: 10px;
+}
+
+/* Cover Image Height and Width */
+#cover-img {
+    border-radius: 100px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
 }
 
 /* Displays Items with Flex and Center Vertically & Horizontally */
@@ -8,8 +67,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 5px;
 }
 
+/* Container Properties and Arranges Items Vertically */
 .vertical-container {
     display: flex;
     justify-content: center;
@@ -17,19 +78,54 @@
     flex-direction: column;
 }
 
-#audio-container {
-    height: 300px;
-    width: 35%;
-    background-color: thistle;
-    margin-top: 20px;
+.justify-space-evenly {
+    justify-content: space-evenly;
 }
 
-#main-container {
-    height: 100vh;
-    width: 100vw
+/* Button Styling */
+button {
+    background-color: #F288A4;
+    color: #402525;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 1s ease;
 }
 
-#cover-img {
-    height: 150px;
-    width: 150px;
+button:hover {
+    background-color: #8C4653;
 }
+
+/* Sliders Styling */
+input[type="range"] {
+    appearance: none;
+    width: 150px; 
+    height: 10px; 
+    background: #F288A4; 
+    border-radius: 5px; 
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none; 
+    width: 16px; 
+    height: 16px;
+    border-radius: 50%;
+    background: #8C4653; 
+    cursor: pointer; 
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background-color: #402525;
+}
+
+/* Progress Display Text */
+#progress-text,
+#duration-text {
+    font-size: 18px;
+    color: #402525; 
+}
+
+/* Colour Pallette: #8C4653 #F2B3BF #F288A4 #F26DB6 #402525*/
