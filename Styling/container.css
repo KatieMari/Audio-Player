@@ -17,6 +17,11 @@
     width: 85%;
     max-width: 600px;
     background-color: #F2B3BF;
-    border-radius: 1000px;
+    border-radius: 50px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
 }

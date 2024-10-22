@@ -29,6 +29,10 @@ body {
     justify-content: space-between;
 }
 
+.gap-25 {
+    gap: 25px;
+}
+
 @media (max-width: 600px) {
     h1 {
         font-size: 50px;

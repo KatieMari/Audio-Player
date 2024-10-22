@@ -5,6 +5,7 @@ input[type="range"] {
     height: 8px;
     background: #F288A4;
     border-radius: 5px;
+    margin-bottom: 1;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -18,11 +19,4 @@ input[type="range"]::-webkit-slider-thumb {
 
 input[type="range"]::-webkit-slider-thumb:hover {
     background-color: #402525;
-}
-
-/* Progress Display Text */
-#progress-text,
-#duration-text {
-    font-size: 14px;
-    color: #402525;
 }
