@@ -1,0 +1,28 @@
+/* Sliders Styling */
+input[type="range"] {
+    appearance: none;
+    width: 120px;
+    height: 8px;
+    background: #F288A4;
+    border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #8C4653;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background-color: #402525;
+}
+
+/* Progress Display Text */
+#progress-text,
+#duration-text {
+    font-size: 14px;
+    color: #402525;
+}

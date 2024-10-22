@@ -104,7 +104,6 @@ function onPlayPauseClick() {
     }
 }
 
-
 /**
  * onLodedMetadata Updates the Maximum of the progressSlider when new src is Loaded
  */

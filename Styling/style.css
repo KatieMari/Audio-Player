@@ -9,143 +9,18 @@
 /* Body Styling */
 body {
     font-family: 'Abril Fatface', sans-serif;
-    background-color: #f4f4f9;
+    font-size: 14px;
+    background-color: #e5d3e6;
     color: #402525;
     height: 100vh;
-}
-
-/* Title Styling */
-h1 {
-    font-size: 75px;
-    color: #402525;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Song Name and Artist Styling */
-p {
-    font-size: 25px;
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-p span {
-    font-weight: bold;
-    color: #402525;
-}
-
-/* Container for Drag & Drop */
-#player-container {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Styles for the Audio Container Player */
-#audio-container {
-    height: 500px;
-    width: 90%;
-    max-width: 1000px;
-    background-color: #F2B3BF;
-    border-radius: 1000px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-}
-
-/* Cover Image Height and Width */
-#cover-img {
-    border-radius: 100px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
-}
-
-/* Main Container */
-.main-container {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Displays Items with Flex and Center Vertically & Horizontally */
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-/* Container Properties and Arranges Items Vertically */
-.vertical-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 
 .justify-space-evenly {
     justify-content: space-evenly;
 }
 
-.clickable {
-    user-select: none;
-    cursor: pointer;
-    /* How Long it Takes to Scale Up */
-    transition: transform 0.3s;
-}
-
-/* Slightly Scale up on Hover */
-.clickable:hover {
-    transform: scale(1.2); 
-}
-
-.clickable:focus {
-    outline: 2px solid #402525;
-}
-
-.icon {
-    width: 50px;
-    height: 50px;
-}
-
-/* Sliders Styling */
-input[type="range"] {
-    appearance: none;
-    width: 150px;
-    height: 10px;
-    background: #F288A4;
-    border-radius: 5px;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-    appearance: none;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: #8C4653;
-    cursor: pointer;
-}
-
-input[type="range"]::-webkit-slider-thumb:hover {
-    background-color: #402525;
-}
-
-/* Progress Display Text */
-#progress-text,
-#duration-text {
-    font-size: 18px;
-    color: #402525;
-}
-
-/* Colour Pallette: #8C4653 #F2B3BF #F288A4 #F26DB6 #402525*/
-
 @media (max-width: 600px){
     h1{ font-size: 50px;}
 }
+
+/* Colour Pallette: #8C4653 #F2B3BF #F288A4 #F26DB6 #402525*/
