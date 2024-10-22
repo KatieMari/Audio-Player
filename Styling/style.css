@@ -15,12 +15,24 @@ body {
     height: 100vh;
 }
 
-.justify-space-evenly {
-    justify-content: space-evenly;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (max-width: 600px){
-    h1{ font-size: 50px;}
+.flex-column {
+    flex-direction: column;
+}
+
+.justify-space-between {
+    justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 50px;
+    }
 }
 
 /* Colour Pallette: #8C4653 #F2B3BF #F288A4 #F26DB6 #402525*/

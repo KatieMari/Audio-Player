@@ -20,24 +20,26 @@
     <title>Audio Player</title>
 </head>
 
-<body class="container">
+<body>
     <!-- Main Container Div -->
-    <div id="dropzone" class="vertical-container main-container">
+    <div id="dropzone" class="container flex-column">
 
         <!-- Audio Player Title -->
         <h1>Miau Music Player</h1>
 
         <!-- Drag and Drop Container -->
-        <div id="player-container" draggable="true" class="container vertical-container justify-space-evenly">
+        <div id="player-container" draggable="true" class="container flex-column justify-space-between">
 
             <!-- Audio Player Container -->
-            <div id="audio-container" class="vertical-container justify-space-evenly">
+            <div id="audio-container" class="justify-space-between flex-column">
                 <!-- Song Name and Artist -->
-                <p> <span id="song-name">What Was I Made For</span> <span>by</span> <span id="artist-name">Billie Eilish
-                        ft. Bongo Cat</span> </p>
+                <p> <span id="song-name">What Was I Made For</span>
+                    <span>by</span>
+                    <span id="artist-name">Billie Eilish ft. Bongo Cat</span>
+                </p>
 
                 <!-- Volume, Play, Previous, Next Buttons and Image Cover -->
-                <div class="container justify-space-evenly">
+                <div class="container">
 
                     <!-- Volume -->
                     <div class="container">
@@ -47,9 +49,12 @@
 
                     <!-- Play, Previous, Next Buttons -->
                     <div class="container">
-                        <img id="previous-button" class="clickable icon" src="Assets/Images/Previous-Icon.png" alt="Previous" tabindex="0" />
-                        <img id="play-pause-button" class="clickable icon" src="Assets/Images/Play-Icon.png" alt="Play/Pause" tabindex="0" />
-                        <img id="next-button" class="clickable icon" src="Assets/Images/Next-Icon.png" alt="Next" tabindex="0" />
+                        <img id="previous-button" class="clickable icon" src="Assets/Images/Previous-Icon.png"
+                            alt="Previous" tabindex="0" />
+                        <img id="play-pause-button" class="clickable icon" src="Assets/Images/Play-Icon.png"
+                            alt="Play/Pause" tabindex="0" />
+                        <img id="next-button" class="clickable icon" src="Assets/Images/Next-Icon.png" alt="Next"
+                            tabindex="0" />
                     </div>
 
                     <!-- Image Cover -->

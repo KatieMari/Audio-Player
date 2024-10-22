@@ -1,0 +1,22 @@
+#player-container,
+#audio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#player-container {
+    height: 80vh;
+    width: 90vw;
+    position: relative;
+}
+
+/* Styles for the Audio Container Player */
+#audio-container {
+    height: 300px;
+    width: 85%;
+    max-width: 600px;
+    background-color: #F2B3BF;
+    border-radius: 1000px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
