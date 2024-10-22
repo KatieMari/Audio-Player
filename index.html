@@ -10,49 +10,59 @@
 
     <!-- Links HTML and JavaScript -->
     <script src="Java/audio-player.js" defer></script>
+    <script src="Java/drag-drop.js" defer></script>
 
     <title>Audio Player</title>
 </head>
 
 <body class="container">
     <!-- Main Container Div -->
-    <div id="main-container" class="vertical-container">
+    <div id="dropzone" class="vertical-container main-container">
 
         <!-- Audio Player Title -->
         <h1>Miau Music Player</h1>
 
-        <!-- Audio Player Container -->
-        <div id="audio-container" class="vertical-container justify-space-evenly">
-            <!-- Song Name and Artist -->
-            <p> <span>What Was I Made For</span> <span>by</span> <span>Billie Eilish ft. Bongo Cat</span> </p>
+        <!-- Drag and Drop Container -->
+        <div id="player-container" draggable="true" class="container vertical-container justify-space-evenly">
 
-            <!-- Volume, Play, Previous, Next Buttons and Image Cover -->
-            <div class="container justify-space-evenly">
+            <!-- Audio Player Container -->
+            <div id="audio-container" class="vertical-container justify-space-evenly">
+                <!-- Song Name and Artist -->
+                <p> <span id="song-name">What Was I Made For</span> <span>by</span> <span id="artist-name">Billie Eilish
+                        ft. Bongo Cat</span> </p>
 
-                <!-- Volume -->
-                <div class="container">
-                    <input id="volume-slider" type="range" min="0" max="100" />
+                <!-- Volume, Play, Previous, Next Buttons and Image Cover -->
+                <div class="container justify-space-evenly">
+
+                    <!-- Volume -->
+                    <div class="container">
+                        <img class="icon" src="Assets/Images/Volume-Icon.png" />
+                        <input id="volume-slider" type="range" min="0" max="100" />
+                    </div>
+
+                    <!-- Play, Previous, Next Buttons -->
+                    <div class="container">
+                        <img id="previous-button" class="clickable icon" src="Assets/Images/Previous-Icon.png"
+                            alt="Previous" tabindex="0" />
+                        <img id="play-pause-button" class="clickable icon" src="Assets/Images/Play-Icon.png"
+                            alt="Play/Pause" tabindex="0" />
+                        <img id="next-button" class="clickable icon" src="Assets/Images/Next-Icon.png" alt="Next"
+                            tabindex="0" />
+                    </div>
+
+                    <!-- Image Cover -->
+                    <img id="cover-img" src="Assets/Images/Image 1.jpeg" alt="Album Cover" />
                 </div>
 
-                <!-- Play, Previous, Next Buttons -->
+                <!-- Progess of Song Display -->
                 <div class="container">
-                    <button>Previous</button>
-                    <button id="play-button">Play</button>
-                    <button>Next</button>
+                    <p>
+                        <span id="progress-text">00:00</span>
+                        <span id="duration-text">00:00</span>
+                    </p>
+
+                    <input id="progress-slider" type="range" value="0" />
                 </div>
-
-                <!-- Image Cover -->
-                <img id="cover-img" src="Assets/Images/Image 1.jpeg" alt="Album Cover" />
-            </div>
-
-            <!-- Progess of Song Display -->
-            <div class="container">
-                <p>
-                    <span id="progress-text">00:00</span> 
-                    <span id="duration-text">00:00</span>
-                </p>
-
-                <input id="progress-slider" type="range" value="0" />
             </div>
         </div>
     </div>
