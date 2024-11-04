@@ -1,11 +1,11 @@
-#play-pause-button {
+#play-pause-button{
     margin-left: 10px;
     margin-right: 10px;
 }
 
 .icon {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
 }
 
 .clickable {
@@ -15,39 +15,29 @@
     transition: transform 0.3s;
 }
 
-/* Pulses when Hovering */
-.up:hover {
-    animation: pulse 1s infinite;
-}
-
 /* Slightly Scale up on Hover */
 .clickable:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
-/* Rotates Previous Icon 50 deg Left when Clicked */
-.left:active {
-    transform: scale(1.1) rotate(-45deg);
-}
-
-/* Rotates Next Icon 50 deg Right when Clicked */
-.right:active {
-    transform: scale(1.1) rotate(45deg);
-}
-
+/* Applying the pulse animation continuously on hover */
 .up:hover {
     animation: pulse 1s infinite;
 }
 
-/* Animation */
+/* Scaling the icon slightly when it’s clicked */
+.left:active {
+    transform: scale(1.1) rotate(-50deg);
+}
+
+.right:active {
+    transform: scale(1.1) rotate(50deg);
+}
+
+/* Define a smoother pulse animation */
 @keyframes pulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
+    /* Return to original size */
+    0%, 100% { transform: scale(1); } 
+    /* Slightly larger at midpoint */ 
+    50% { transform: scale(1.1); }    
 }

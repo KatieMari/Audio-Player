@@ -4,6 +4,8 @@ const draggable = document.getElementById("player-container");
 let offsetX = 0;
 let offsetY = 0;
 
+let sliderIsChanging = false;
+
 dropZone.ondragover = (event) => {
     event.preventDefault();
 };
@@ -16,6 +18,11 @@ dropZone.ondrop = (event) => {
 };
 
 draggable.ondragstart = (event) => {
+    if(sliderIsChanging) {
+        event.preventDefault();
+        return;
+      }
+
     const style = window.getComputedStyle(draggable);
     offsetX = event.clientX - parseInt(style.left);
     offsetY = event.clientY - parseInt(style.top);
