@@ -6,6 +6,12 @@ h1 {
     padding-top: 30px;
 }
 
+h2{
+    font-size: 30px;
+    padding: 20px;
+    text-decoration: underline;
+}
+
 /* Song Name and Artist Styling */
 p {
     font-size: 21px;

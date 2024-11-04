@@ -75,6 +75,30 @@ let songIndex = 0;
 let updatingProgress = false;
 
 /**
+ * Drag-and-Drop: Set up drag events for each song in the list.
+ */
+const songItems = document.querySelectorAll(".song-item");
+songItems.forEach((songItem, index) => {
+    songItem.setAttribute("draggable", "true");
+    songItem.dataset.index = index;
+
+    songItem.ondragstart = (event) => {
+        event.dataTransfer.setData("text/plain", event.target.dataset.index);
+    };
+});
+
+dropZone.ondrop = (event) => {
+    event.preventDefault();
+    const droppedSongIndex = event.dataTransfer.getData("text/plain");
+    if (droppedSongIndex) {
+        songIndex = parseInt(droppedSongIndex, 10);
+        updatePlayingSong();
+    }
+};
+
+
+
+/**
  * Everything that Happens when Audio is Played
  */
 function playAudio() {

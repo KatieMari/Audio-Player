@@ -27,6 +27,21 @@
         <!-- Audio Player Title -->
         <h1>Miau Music Player</h1>
 
+        <!-- Song List Section -->
+        <section id="song-list" class="container flex-column">
+            <h2>Song List</h2>
+            <p class="song-item" draggable="true" data-index="0">What Was I Made For - Billie Eilish</p>
+            <p class="song-item" draggable="true" data-index="1">Lover - Taylor Swift</p>
+            <p class="song-item" draggable="true" data-index="2">Vampire - Olivia Rodrigo</p>
+            <p class="song-item" draggable="true" data-index="3">Birds of a Feather- Billie Eilish</p>
+            <p class="song-item" draggable="true" data-index="4">Touch - Katseye</p>
+            <p class="song-item" draggable="true" data-index="5">Espresso - Sabrina Carpenter</p>
+          
+          
+        </section>
+
+
+
         <!-- Drag and Drop Container -->
         <div id="player-container" draggable="true" class="container flex-column justify-space-between">
 
@@ -49,11 +64,11 @@
 
                     <!-- Play, Previous, Next Buttons -->
                     <div class="container">
-                        <img id="previous-button" class="clickable icon" src="Assets/Images/Previous-Icon.png"
+                        <img id="previous-button" class="clickable icon left" src="Assets/Images/Previous-Icon.png"
                             alt="Previous" tabindex="0" />
-                        <img id="play-pause-button" class="clickable icon" src="Assets/Images/Play-Icon.png"
+                        <img id="play-pause-button" class="clickable icon up" src="Assets/Images/Play-Icon.png"
                             alt="Play/Pause" tabindex="0" />
-                        <img id="next-button" class="clickable icon" src="Assets/Images/Next-Icon.png" alt="Next"
+                        <img id="next-button" class="clickable icon right" src="Assets/Images/Next-Icon.png" alt="Next"
                             tabindex="0" />
                     </div>
 
@@ -64,7 +79,7 @@
                 <!-- Progess of Song Display -->
                 <div class="player-container">
                     <p>
-                        <span id="progress-text">00:00</span> 
+                        <span id="progress-text">00:00</span>
                         <span id="duration-text">00:00</span>
                     </p>
 
