@@ -1,11 +1,11 @@
-#play-pause-button{
+#play-pause-button {
     margin-left: 10px;
     margin-right: 10px;
 }
 
 .icon {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
 }
 
 .clickable {
@@ -36,8 +36,15 @@
 
 /* Define a smoother pulse animation */
 @keyframes pulse {
+
     /* Return to original size */
-    0%, 100% { transform: scale(1); } 
-    /* Slightly larger at midpoint */ 
-    50% { transform: scale(1.1); }    
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    /* Slightly larger at midpoint */
+    50% {
+        transform: scale(1.1);
+    }
 }

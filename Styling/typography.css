@@ -6,12 +6,6 @@ h1 {
     padding-top: 30px;
 }
 
-h2{
-    font-size: 30px;
-    padding: 20px;
-    text-decoration: underline;
-}
-
 /* Song Name and Artist Styling */
 p {
     font-size: 21px;
@@ -31,9 +25,9 @@ p span {
     font-size: 14px;
     color: #402525;
     padding-right: 10px;
+    align-items: center;
 }
 
 #progress-text {
     font-weight: bold;
 }
-

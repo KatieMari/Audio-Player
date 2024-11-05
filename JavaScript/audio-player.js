@@ -19,6 +19,15 @@ const volumeSlider = document.getElementById("volume-slider");
 const progressText = document.getElementById("progress-text");
 const durationText = document.getElementById("duration-text");
 
+// Playing Stores if the audioPlayer is Currently Playing
+let playing = false;
+// updatingProgress Stores if the User is Updating the Progress in the progressBar
+let progressSliderMoving = false;
+// Song Index
+let songIndex = 0;
+
+audioPlayer.volume = 0.5;
+
 //audioPlayer.src is the First song of the Audio Player by Default
 audioPlayer.src = "Assets/Songs/Song 1.mp3";
 const songs = [
@@ -65,14 +74,6 @@ const songs = [
     },
 ];
 
-// Playing Stores if the audioPlayer is Currently Playing
-let playing = false;
-
-// Song Index
-let songIndex = 0;
-
-// updatingProgress Stores if the User is Updating the Progress in the progressBar
-let updatingProgress = false;
 
 /**
  * Everything that Happens when Audio is Played
@@ -165,7 +166,7 @@ function onTimeUpdate() {
     progressText.innerHTML = minutesSeconds;
 
     // Update Slider
-    if (!updatingProgress) {
+    if (!progressSliderMoving) {
         progressSlider.value = audioPlayer.currentTime;
     }
 }
@@ -186,14 +187,13 @@ function onEnd() {
 function onVolumeSliderChange() {
     audioPlayer.volume = volumeSlider.value * 0.01;
     // Displays Current Volume
-    console.log("volume:" + (audioPlayer.volume * 100) + "%");
 }
 
 /**
  * onProgressMouseDown Updates the updatingProgress Boolean to Mark the User is Updating the progressSlider
  */
 function onProgressMouseDown() {
-    updatingProgress = true;
+    progressSliderMoving = true;
 }
 
 /**
@@ -201,7 +201,7 @@ function onProgressMouseDown() {
  */
 function onProgressSliderChange() {
     audioPlayer.currentTime = progressSlider.value;
-    updatingProgress = false;
+    progressSliderMoving = false;
 }
 
 /**
@@ -235,6 +235,7 @@ audioPlayer.onended = nextSong;
 
 // Volume Slider Events
 volumeSlider.onchange = onVolumeSliderChange;
+
 
 // Progress Slider Events
 progressSlider.onchange = onProgressSliderChange;

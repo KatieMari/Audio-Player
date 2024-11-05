@@ -11,8 +11,6 @@ dropZone.ondragover = (event) => {
 };
 
 dropZone.ondrop = (event) => {
-    let newX = event.clientX - offsetX;
-    let newY = event.clientY - offsetY;
     draggable.style.left = event.clientX - offsetX + "px";
     draggable.style.top = event.clientY - offsetY + "px";
 };
