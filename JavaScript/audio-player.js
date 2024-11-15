@@ -114,11 +114,6 @@ function onLoadedMetadata() {
     const minutesSeconds = secondsToMMSS(audioPlayer.duration);
     durationText.innerHTML = minutesSeconds;
     progressText.innerHTML = "00:00";
-
-    // // // Sync Play State
-    // if (playing) {
-    //     audioPlayer.play();
-    // }
 }
 
 /**
