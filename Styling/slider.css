@@ -1,3 +1,10 @@
+/* Prevent sliders from causing shifts in layout */
+#volume-slider,
+#progress-slider {
+    width: 100%;
+    position: relative;
+}
+
 /* Sliders Styling */
 input[type="range"] {
     appearance: none;

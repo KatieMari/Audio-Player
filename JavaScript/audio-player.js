@@ -1,6 +1,3 @@
-// Creates the Audio Player Object
-const audioPlayer = new Audio();
-
 // Song Info
 const songName = document.getElementById("song-name");
 const artistName = document.getElementById("artist-name");
@@ -19,17 +16,13 @@ const volumeSlider = document.getElementById("volume-slider");
 const progressText = document.getElementById("progress-text");
 const durationText = document.getElementById("duration-text");
 
-// Playing Stores if the audioPlayer is Currently Playing
-let playing = false;
-// updatingProgress Stores if the User is Updating the Progress in the progressBar
-let progressSliderMoving = false;
-// Song Index
-let songIndex = 0;
-
+// Creates the Audio Player Object
+const audioPlayer = new Audio();
 audioPlayer.volume = 0.5;
-
 //audioPlayer.src is the First song of the Audio Player by Default
 audioPlayer.src = "Assets/Songs/Song 1.mp3";
+
+// Playlist
 const songs = [
     {
         name: "What Was I Made For",
@@ -74,6 +67,15 @@ const songs = [
     },
 ];
 
+// Playing Stores if the audioPlayer is Currently Playing
+let playing = false;
+// updatingProgress Stores if the User is Updating the Progress in the progressBar
+let progressSliderMoving = false;
+// Song Index
+let songIndex = 0;
+
+// Stores Whether any of the Sliders are Changing
+let isSliderChanging = false;
 
 /**
  * Everything that Happens when Audio is Played
@@ -96,13 +98,9 @@ function pauseAudio() {
  * if Audio Player is not Playing -> Play Sound
  */
 function onPlayPauseClick() {
-    if (playing) {
-        pauseAudio();
-        playing = false;
-    } else {
-        playAudio();
-        playing = true;
-    }
+    if (!playing) playAudio();
+    else pauseAudio();
+    playing = !playing;
 }
 
 /**
@@ -117,10 +115,10 @@ function onLoadedMetadata() {
     durationText.innerHTML = minutesSeconds;
     progressText.innerHTML = "00:00";
 
-    // Sync Play State
-    if (playing) {
-        audioPlayer.play();
-    }
+    // // // Sync Play State
+    // if (playing) {
+    //     audioPlayer.play();
+    // }
 }
 
 /**
@@ -139,7 +137,7 @@ function updatePlayingSong() {
     artistName.innerHTML = songs[songIndex].artist;
     coverImage.src = songs[songIndex].cover;
 
-    if (playing) playAudio();
+    if (playing) audioPlayer.play();
 }
 
 // When Next is Pressed
@@ -166,27 +164,19 @@ function onTimeUpdate() {
     progressText.innerHTML = minutesSeconds;
 
     // Update Slider
-    if (!progressSliderMoving) {
-        progressSlider.value = audioPlayer.currentTime;
-    }
+    if (!progressSliderMoving) return;
+    progressSlider.value = audioPlayer.currentTime;
 }
 
 /**
- * onEnd Resets all Necessary Values for the Song to Start Playing Again
+ * onProgressSliderChange Updates the currentTime of the audioPlayer to the Value of the progressSlider and updatingProgress to False, To Mark the User is not Moving the Slider Anymore
  */
-function onEnd() {
-    progressSlider.value = 0;
-    playPauseButton.src = "Assets/Images/Play-Icon.png"
-    playing = false;
-    progressText.innerHTML = "00:00";
-}
-
-/**
- * Take Value of the volumeSlider and Update audioPlayer.volume
- */
-function onVolumeSliderChange() {
-    audioPlayer.volume = volumeSlider.value * 0.01;
-    // Displays Current Volume
+function onProgressSliderChange() {
+    const sliderValue = Number(event.target.value)
+    const newAudioTime = sliderValue;
+    audioPlayer.currentTime = newAudioTime
+    progressSliderMoving = false;
+    isSliderChanging = false;
 }
 
 /**
@@ -194,15 +184,40 @@ function onVolumeSliderChange() {
  */
 function onProgressMouseDown() {
     progressSliderMoving = true;
+    isSliderChanging = true;
 }
 
 /**
- * onProgressSliderChange Updates the currentTime of the audioPlayer to the Value of the progressSlider and updatingProgress to False, To Mark the User is not Moving the Slider Anymore
+ * Take Value of the volumeSlider and Update audioPlayer.volume
  */
-function onProgressSliderChange() {
-    audioPlayer.currentTime = progressSlider.value;
-    progressSliderMoving = false;
+function onVolumeSliderChange(event) {
+    const newVolume = event.target.value * 0.01;
+    audioPlayer.volume = newVolume;
+    isSliderChanging = false;
+    // Displays Current Volume
 }
+
+function onVolumeMouseDown(event) {
+    isSliderChanging = true;
+}
+
+// Play Pause Button Events
+playPauseButton.onclick = onPlayPauseClick;
+nextButton.onclick = nextSong;
+previousButton.onclick = previousSong;
+
+// Audio Player Events
+audioPlayer.onloadedmetadata = onLoadedMetadata;
+audioPlayer.ontimeupdate = onTimeUpdate;
+audioPlayer.onended = nextSong;
+
+// Volume Slider Events
+volumeSlider.onchange = onVolumeSliderChange;
+volumeSlider.onmousedown = onVolumeMouseDown;
+
+// Progress Slider Events
+progressSlider.onchange = onProgressSliderChange;
+progressSlider.onmousedown = onProgressMouseDown;
 
 /**
  * 
@@ -222,24 +237,6 @@ function secondsToMMSS(seconds) {
 
     return MM + ":" + SS;
 }
-
-// Play Pause Button Events
-playPauseButton.onclick = onPlayPauseClick;
-nextButton.onclick = nextSong;
-previousButton.onclick = previousSong;
-
-// Audio Player Events
-audioPlayer.onloadedmetadata = onLoadedMetadata;
-audioPlayer.ontimeupdate = onTimeUpdate;
-audioPlayer.onended = nextSong;
-
-// Volume Slider Events
-volumeSlider.onchange = onVolumeSliderChange;
-
-
-// Progress Slider Events
-progressSlider.onchange = onProgressSliderChange;
-progressSlider.onmousedown = onProgressMouseDown;
 
 // Keyboard Controls
 document.addEventListener('keydown', (event) => {

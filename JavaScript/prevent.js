@@ -1,0 +1,1 @@
+let isSliderChanging = false;
